@@ -1,0 +1,24 @@
+name: Flutter CI
+
+on:
+  push:
+    branches:
+    - develop-ci
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: subosito/flutter-action@v2.4.0
+      with:
+        channel: 'stable'
+        flutter-version: '2.10.3'
+    - run: flutter pub get
+    - run: flutter build apk
+
+    - name: Upload to artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: test-app-profile
+        path: build/app/outputs/flutter-apk/app-release.apk
