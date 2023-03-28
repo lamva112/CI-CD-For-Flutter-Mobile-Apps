@@ -32,7 +32,8 @@ jobs:
         name: "CICD-TESTING-profile.apk" # Name of file in drive. Needs to be same as temporary file.
         overwrite: "true" # This will overwrite temporary file
         mimetype: application/vnd.android.package-archive
-SendingApk:
+
+  SendingApk:
     needs: build
     runs-on: ubuntu-latest
     steps:
