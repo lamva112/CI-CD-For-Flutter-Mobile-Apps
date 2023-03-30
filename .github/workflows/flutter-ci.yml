@@ -41,6 +41,6 @@ jobs:
       - name: Sending Mail
         uses: fjogeleit/http-request-action@v1.9.2
         with:
-          url: "https://ci-cd-api-service-production.up.railway.app/sendMail"
+          url: "http://localhost:3000/sendMail"
           method: "POST"
           data: '{"companyLogoUrl": "https://static.topcv.vn/company_logos/XXCXZbEl1yPUAk3Pe4I7BEQ809nchCfa_1648024225____bebd4f5e76b56fd42ce0210d84dca5c8.png","appLink": "https://drive.google.com/drive/u/0/folders/1uqPQyL6qaV85oENWZzwyoseNdHIXCid1","subject": "SUBJECT OF MAIL","to": ["lambui1239@gmail.com"]}'
